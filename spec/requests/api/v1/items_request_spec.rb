@@ -45,24 +45,28 @@ describe 'Items API' do
 
   it 'can create an item' do
     create_list(:merchant, 1)
-    visit '/api/v1/items'
+    get '/api/v1/items'
 
     item_params = ({
                 name: 'Computer',
                 description: 'Macbook Pro',
                 unit_price: '1200.99',
-                merchant_id: '1'
+                merchant_id: '3'
               })
     headers = {"CONTENT_TYPE" => "application/json"}
 
-    post "/api/v1/items", headers: headers, params: JSON.generate(book: item_params)
+    post "/api/v1/items", headers: headers, params: JSON.generate(item: item_params)
     created_item = Item.last
 
+    # binding.pry
     expect(response).to be_successful
-    expect(created_item.name).to eq()
+    expect(created_item.name).to eq(item_params[:name])
+    expect(created_item.description).to eq(item_params[:description])
+    expect(created_item.unit_price.to_s).to eq(item_params[:unit_price])
+    expect(created_item.merchant_id.to_s).to eq(item_params[:merchant_id])
   end
 
-  xit 'can edit an item' do
+  xit 'can update an item' do
 
   end
 

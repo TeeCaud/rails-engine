@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-08-30T18:01:15-05:00">2022-08-30T18:01:15-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-08-30T19:22:52-05:00">2022-08-30T19:22:52-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -43,9 +43,9 @@
   </div>
 
   <div class="t-line-summary">
-    <b>58</b> relevant lines,
+    <b>64</b> relevant lines,
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>58</b> lines missed. </span>
+    <span class="red"><b>64</b> lines missed. </span>
     (<span class="red">
   0.0%
 </span>
@@ -95,10 +95,10 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#8f519ba94609602df44cea03e1c06387e0bbf60f" class="src_link" title="app/controllers/api/v1/items_controller.rb">app/controllers/api/v1/items_controller.rb</a></td>
             <td class="red strong cell--number t-file__coverage">0.00 %</td>
-            <td class="cell--number">12</td>
-            <td class="cell--number">8</td>
+            <td class="cell--number">22</td>
+            <td class="cell--number">15</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">8</td>
+            <td class="cell--number">15</td>
             <td class="cell--number">0.00</td>
             
           </tr>
@@ -107,9 +107,9 @@
             <td class="strong t-file__name"><a href="#d5cb9c290224277910a5b7d1ce9822f225c9e842" class="src_link" title="app/controllers/api/v1/merchant_items_controller.rb">app/controllers/api/v1/merchant_items_controller.rb</a></td>
             <td class="red strong cell--number t-file__coverage">0.00 %</td>
             <td class="cell--number">6</td>
-            <td class="cell--number">5</td>
+            <td class="cell--number">4</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">5</td>
+            <td class="cell--number">4</td>
             <td class="cell--number">0.00</td>
             
           </tr>
@@ -256,9 +256,9 @@
   </div>
 
   <div class="t-line-summary">
-    <b>23</b> relevant lines,
+    <b>29</b> relevant lines,
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>23</b> lines missed. </span>
+    <span class="red"><b>29</b> lines missed. </span>
     (<span class="red">
   0.0%
 </span>
@@ -286,10 +286,10 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#8f519ba94609602df44cea03e1c06387e0bbf60f" class="src_link" title="app/controllers/api/v1/items_controller.rb">app/controllers/api/v1/items_controller.rb</a></td>
             <td class="red strong cell--number t-file__coverage">0.00 %</td>
-            <td class="cell--number">12</td>
-            <td class="cell--number">8</td>
+            <td class="cell--number">22</td>
+            <td class="cell--number">15</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">8</td>
+            <td class="cell--number">15</td>
             <td class="cell--number">0.00</td>
             
           </tr>
@@ -298,9 +298,9 @@
             <td class="strong t-file__name"><a href="#d5cb9c290224277910a5b7d1ce9822f225c9e842" class="src_link" title="app/controllers/api/v1/merchant_items_controller.rb">app/controllers/api/v1/merchant_items_controller.rb</a></td>
             <td class="red strong cell--number t-file__coverage">0.00 %</td>
             <td class="cell--number">6</td>
-            <td class="cell--number">5</td>
+            <td class="cell--number">4</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">5</td>
+            <td class="cell--number">4</td>
             <td class="cell--number">0.00</td>
             
           </tr>
@@ -1023,9 +1023,9 @@
     
 
     <div class="t-line-summary">
-      <b>8</b> relevant lines.
+      <b>15</b> relevant lines.
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>8</b> lines missed.</span>
+      <span class="red"><b>15</b> lines missed.</span>
     </div>
 
     
@@ -1157,7 +1157,117 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="12">
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">  def create</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby">    render json: ItemSerializer.new(Merchant.find(params[:item][:merchant_id]).items.create(item_params)), status: :created</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby">    # render json: ItemSerializer.new(Item.create(item_params))</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby">  private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="19">
+            
+            
+
+            
+
+            <code class="ruby">  def item_params</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="20">
+            
+            
+
+            
+
+            <code class="ruby">    params.require(:item).permit(:name, :description, :unit_price, :merchant_id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="21">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="22">
             
             
 
@@ -1186,9 +1296,9 @@
     
 
     <div class="t-line-summary">
-      <b>5</b> relevant lines.
+      <b>4</b> relevant lines.
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>5</b> lines missed.</span>
+      <span class="red"><b>4</b> lines missed.</span>
     </div>
 
     
@@ -1232,13 +1342,13 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="4">
+          <li class="never" data-hits="" data-linenumber="4">
             
             
 
             
 
-            <code class="ruby">    render json: MerchantSerializer.new(Merchant.find(params[:id]))</code>
+            <code class="ruby">    </code>
           </li>
         </div>
       
