@@ -70,3 +70,4 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+SimpleCov.add_filter ["app/channels", "app/helpers", "app/mailers", "app/jobs"]

@@ -10,7 +10,6 @@ class Api::V1::MerchantsController < ApplicationController
   end
 
   def find_all
-    # binding.pry
     render json: MerchantSerializer.new(Merchant.find_all_by_name(params[:name]))
   end
 end
