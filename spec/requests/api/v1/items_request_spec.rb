@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe 'Items API' do
   it 'sends a list of items' do
-    create_list(:merchant, 1)
-    create_list(:item, 3)
+    merchant_id = create(:merchant).id
+    create_list(:item, 3, merchant_id: merchant_id)
     get '/api/v1/items'
 
     response_body = JSON.parse(response.body, symbolize_names: true)
@@ -24,9 +24,9 @@ describe 'Items API' do
   end
 
   it 'can get one item by its id' do
-    create_list(:merchant, 1)
-    create_list(:item, 3)
-    id = create(:item).id
+    merchant_id = create(:merchant).id
+    create_list(:item, 3, merchant_id: merchant_id)
+    id = create(:item, merchant_id: merchant_id).id
 
     get "/api/v1/items/#{id}"
 
@@ -66,11 +66,8 @@ describe 'Items API' do
   end
 
   it 'can update an item' do
-    create_list(:merchant, 1)
-    create_list(:item, 3)
-    id = create(:item).id
-    previous_name = Item.last.name
-    expect(previous_name).to eq("MyString")
+    merchant_id = create(:merchant).id
+    id = create(:item, merchant_id: merchant_id).id
 
     item_params = { name: "Cell Phone" }
     headers = {"CONTENT_TYPE" => "application/json"}
@@ -83,14 +80,14 @@ describe 'Items API' do
   end
 
   it 'can delete an item' do
-    create_list(:merchant, 1)
-    item = create(:item)
+    merchant_id = create(:merchant).id
+    id = create(:item, merchant_id: merchant_id).id
     expect(Item.count).to eq(1)
 
-    delete "/api/v1/items/#{item.id}"
+    delete "/api/v1/items/#{id}"
 
     expect(response).to be_successful
     expect(Item.count).to eq(0)
-    expect{Item.find(item.id)}.to raise_error(ActiveRecord::RecordNotFound)
+    expect{Item.find(id)}.to raise_error(ActiveRecord::RecordNotFound)
   end
 end

@@ -45,10 +45,6 @@
           0,
           null,
           0,
-          null,
-          null,
-          null,
-          null,
           0
         ],
         "branches": {
@@ -159,6 +155,18 @@
         "branches": {
         }
       },
+      "/Users/turingtjc/Turing/3Module/projects/rails-engine/app/controllers/api/v1/item_merchant_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/turingtjc/Turing/3Module/projects/rails-engine/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
@@ -180,6 +188,6 @@
         }
       }
     },
-    "timestamp": 1661975730
+    "timestamp": 1661980965
   }
 }
