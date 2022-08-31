@@ -58,7 +58,6 @@ describe 'Items API' do
     post "/api/v1/items", headers: headers, params: JSON.generate(item: item_params)
     created_item = Item.last
 
-    # binding.pry
     expect(response).to be_successful
     expect(created_item.name).to eq(item_params[:name])
     expect(created_item.description).to eq(item_params[:description])
@@ -66,15 +65,32 @@ describe 'Items API' do
     expect(created_item.merchant_id.to_s).to eq(item_params[:merchant_id])
   end
 
-  xit 'can update an item' do
+  it 'can update an item' do
+    create_list(:merchant, 1)
+    create_list(:item, 3)
+    id = create(:item).id
+    previous_name = Item.last.name
+    expect(previous_name).to eq("MyString")
 
+    item_params = { name: "Cell Phone" }
+    headers = {"CONTENT_TYPE" => "application/json"}
+
+    patch "/api/v1/items/#{id}", headers: headers, params: JSON.generate(item: item_params)
+    item = Item.find_by(id: id)
+
+    expect(response).to be_successful
+    expect(item[:name]).to eq("Cell Phone")
   end
 
-  xit 'can delete an item' do
+  it 'can delete an item' do
+    create_list(:merchant, 1)
+    item = create(:item)
+    expect(Item.count).to eq(1)
 
-  end
+    delete "/api/v1/items/#{item.id}"
 
-  xit 'can get the merchant data for a given item ID' do
-
+    expect(response).to be_successful
+    expect(Item.count).to eq(0)
+    expect{Item.find(item.id)}.to raise_error(ActiveRecord::RecordNotFound)
   end
 end
