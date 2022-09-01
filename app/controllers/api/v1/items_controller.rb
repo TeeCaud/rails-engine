@@ -11,7 +11,7 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def create
-    render json: ItemSerializer.new(Merchant.find(params[:item][:merchant_id]).items.create(item_params)), status: :created
+    render json: ItemSerializer.new(Merchant.find(params[:item][:merchant_id]).items.create!(item_params)), status: :created
   end
 
   def update
@@ -19,7 +19,7 @@ class Api::V1::ItemsController < ApplicationController
       Item.find(params[:id]).update(item_params)
       render json: ItemSerializer.new(Item.find(params[:id]))
     else
-      render status: 400
+      render status: 404
     end
   end
 

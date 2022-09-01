@@ -3,7 +3,7 @@ class Item < ApplicationRecord
 
   belongs_to :merchant
 
-  def self.find_by_name(name)
-    where('lower(name) like ?', "%#{name.downcase}%").order('name').first
+  def self.find_by_name(input)
+    where('lower(name) like ?', "%#{input.downcase}%").order('name').first
   end
 end

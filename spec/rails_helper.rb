@@ -71,3 +71,5 @@ Shoulda::Matchers.configure do |config|
   end
 end
 SimpleCov.add_filter ["app/channels", "app/helpers", "app/mailers", "app/jobs"]
+SimpleCov.add_filter 'app/controllers/concerns/exception_handler.rb'
+SimpleCov.add_filter 'spec/rails_helper.rb'

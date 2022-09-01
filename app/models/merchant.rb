@@ -3,7 +3,7 @@ class Merchant < ApplicationRecord
 
   has_many :items, dependent: :destroy
 
-  def self.find_all_by_name(name)
-    where('lower(name) like ?', "%#{name.downcase}%")
+  def self.find_all_by_name(input)
+    where('lower(name) like ?', "%#{input.downcase}%")
   end
 end
